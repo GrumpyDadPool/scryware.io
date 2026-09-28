@@ -4,111 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Scryware — ScryWare Fleet Monitoring & Self-Healing</title>
-<meta name="description" content="ScryWare by Scryware: hub-and-spoke fleet monitoring and self-healing for your systems and network, with a browser-based Command Center.">
-<style>
-  :root {
-    --bg: #0e1116;
-    --panel: #161b22;
-    --border: #262d36;
-    --text: #e6e9ee;
-    --muted: #9aa3af;
-    --accent: #6ee7a0;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.6;
-  }
-  .wrap { max-width: 920px; margin: 0 auto; padding: 0 24px; }
-  header {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 28px 0;
-  }
-  .logo { font-size: 22px; font-weight: 700; letter-spacing: 0.5px; }
-  .logo span { color: var(--accent); }
-  nav a {
-    color: var(--muted); text-decoration: none; margin-left: 28px; font-size: 15px;
-  }
-  nav a:hover { color: var(--text); }
-  .hero { padding: 96px 0 64px; }
-  .kicker {
-    color: var(--accent); font-size: 14px; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 16px;
-  }
-  .hero h1 { font-size: 52px; line-height: 1.15; letter-spacing: -1px; margin-bottom: 20px; }
-  .hero h1 span { color: var(--accent); }
-  .hero p { color: var(--muted); font-size: 19px; max-width: 640px; }
-  .cta-row { margin-top: 32px; display: flex; gap: 16px; flex-wrap: wrap; }
-  .cta {
-    display: inline-block; padding: 12px 28px;
-    background: var(--accent); color: #0b0e12; font-weight: 600;
-    border-radius: 8px; text-decoration: none; font-size: 16px;
-  }
-  .cta:hover { filter: brightness(1.08); }
-  .cta-ghost {
-    display: inline-block; padding: 12px 28px;
-    border: 1px solid var(--border); color: var(--text); font-weight: 600;
-    border-radius: 8px; text-decoration: none; font-size: 16px;
-  }
-  .cta-ghost:hover { border-color: var(--muted); }
-  section { padding: 56px 0; }
-  h2 { font-size: 28px; margin-bottom: 8px; letter-spacing: -0.5px; }
-  .sub { color: var(--muted); margin-bottom: 32px; max-width: 640px; }
-  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-  @media (max-width: 640px) { .grid { grid-template-columns: 1fr; } .hero h1 { font-size: 38px; } }
-  .card {
-    background: var(--panel); border: 1px solid var(--border);
-    border-radius: 12px; padding: 28px;
-  }
-  .card h3 { font-size: 19px; margin-bottom: 10px; }
-  .card p { color: var(--muted); font-size: 15px; }
-  .badge {
-    display: inline-block; font-size: 12px; font-weight: 600;
-    color: var(--accent); border: 1px solid var(--accent);
-    border-radius: 20px; padding: 3px 12px; margin-bottom: 16px;
-    text-transform: uppercase; letter-spacing: 0.6px;
-  }
-  .badge.dim { color: var(--muted); border-color: var(--border); }
-  .feature-list { list-style: none; margin-top: 20px; }
-  .feature-list li {
-    padding: 14px 0; border-top: 1px solid var(--border);
-    display: flex; gap: 12px; align-items: baseline;
-  }
-  .feature-list li:last-child { border-bottom: 1px solid var(--border); }
-  .feature-list strong { min-width: 170px; }
-  .feature-list span { color: var(--muted); font-size: 15px; }
-  @media (max-width: 640px) { .feature-list li { flex-direction: column; gap: 4px; } }
-  .repo-link { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 15px; }
-  .repo-link:hover { text-decoration: underline; }
-  .apps-note { font-size: 14px; color: var(--muted); margin-top: 24px; }
-  .about p { color: var(--muted); max-width: 640px; margin-bottom: 16px; }
-  .contact-box {
-    background: var(--panel); border: 1px solid var(--border);
-    border-radius: 12px; padding: 32px; text-align: center;
-  }
-  .contact-box a { color: var(--accent); font-size: 20px; font-weight: 600; text-decoration: none; }
-  .contact-box a:hover { text-decoration: underline; }
-  footer {
-    border-top: 1px solid var(--border); margin-top: 40px;
-    padding: 28px 0 40px; color: var(--muted); font-size: 14px;
-    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
-  }
-  footer a { color: var(--muted); text-decoration: none; }
-  footer a:hover { color: var(--text); }
-</style>
+<meta name="description" content="Scryware is an independent software studio. Flagship: ScryWare, fleet monitoring and self-healing for MSPs and small businesses. Plus four privacy-first Android apps.">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <div class="wrap">
 
-  <header>
-    <div class="logo">scry<span>ware</span></div>
+  <header class="site">
+    <a class="logo" href="index.html">scry<span>ware</span></a>
     <nav>
-      <a href="#product">Product</a>
-      <a href="#apps">More</a>
-      <a href="#about">About</a>
+      <a href="product.html">Product</a>
+      <a href="apps.html">Apps</a>
+      <a href="company.html">Company</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -118,32 +25,32 @@
     <h1>Your systems,<br><span>watched and healed.</span></h1>
     <p><strong>ScryWare</strong> is a fleet monitoring and self-healing platform: lightweight reporters on every machine dial in to a central hub, and a browser-based Command Center lets you see everything — and fix things — from anywhere on your network.</p>
     <div class="cta-row">
-      <a class="cta" href="#product">How it works</a>
+      <a class="cta" href="product.html">How it works</a>
       <a class="cta-ghost" href="#contact">Request pilot access</a>
     </div>
   </div>
 
-  <section id="product">
-    <span class="badge">In active development</span>
+  <section class="block" id="product">
+    <span class="badge">In private development</span>
     <h2>ScryWare System Admin Agent</h2>
-    <p class="sub">A hub-and-spoke diagnostic orchestrator. Endpoints report in, the hub collects health data and queues remediation, and a stateful diagnostic agent does the detective work — inspecting network status, analyzing logs, and executing safe scripts with full conversation context.</p>
+    <p class="sub">A hub-and-spoke diagnostic orchestrator built for the realities of running other people's infrastructure — now onboarding MSP and small-business pilots.</p>
     <ul class="feature-list">
-      <li><strong>Command Center</strong><span>Browser-based fleet console: health reports, remediation queue, ops chat, and role-based access — manageable from any device on your LAN.</span></li>
-      <li><strong>Endpoint reporters</strong><span>Lightweight agents on each machine dial out to the hub. No inbound firewall holes, no VPN required.</span></li>
-      <li><strong>Self-healing</strong><span>Queue remediation commands centrally and let the diagnostic agent correct problems in real time as they happen.</span></li>
-      <li><strong>Versioned REST API</strong><span>A stable API for managing the whole fleet programmatically, from anything on your network.</span></li>
+      <li><strong>Command Center</strong><span>Browser-based fleet console: health reports, remediation queue, ops chat, and role-based access.</span></li>
+      <li><strong>Endpoint reporters</strong><span>Lightweight agents dial out to the hub. No inbound firewall holes, no VPN required.</span></li>
+      <li><strong>Self-healing</strong><span>Queue remediation commands centrally; the diagnostic agent corrects problems in real time.</span></li>
+      <li><strong>Versioned REST API</strong><span>Manage the whole fleet programmatically from anything on your network.</span></li>
     </ul>
-    <p style="margin-top: 24px; color: var(--muted); font-size: 15px;">ScryWare is in private development for MSP and small-business pilots. <a class="repo-link" href="#contact">Get in touch for early access &rarr;</a></p>
+    <p class="section-link"><a class="more-link" href="product.html">Read the full overview &rarr;</a></p>
   </section>
 
-  <section id="apps">
+  <section class="block" id="apps">
     <h2>Also from the studio</h2>
-    <p class="sub">Part of the repertoire — smaller apps built with the same philosophy: plain, reliable, and respectful of your time.</p>
+    <p class="sub">Part of the repertoire — focused Android apps built with the same philosophy: plain, private, and sold once.</p>
     <div class="grid">
       <div class="card">
         <span class="badge dim">In development</span>
         <h3>Finance Dashboard</h3>
-        <p>Track accounts and balances by hand. No bank logins, no noise — just your numbers, exactly as you left them.</p>
+        <p>Net worth and bills at a glance. Manual entry, no bank login — 100% on-device.</p>
       </div>
       <div class="card">
         <span class="badge dim">In development</span>
@@ -153,34 +60,38 @@
       <div class="card">
         <span class="badge dim">In development</span>
         <h3>ADHD Focus Companion</h3>
-        <p>Gentle structure, timers, and momentum for ADHD brains — without the guilt trip.</p>
+        <p>An external executive function: decides what to do next, with adaptive, non-shaming nudges.</p>
       </div>
       <div class="card">
         <span class="badge dim">In development</span>
         <h3>Home Maintenance</h3>
-        <p>Seasonal maintenance reminders before small tasks become expensive repairs.</p>
+        <p>Seasonal checklists and an exportable completion log — before small tasks become repairs.</p>
       </div>
     </div>
+    <p class="section-link"><a class="more-link" href="apps.html">Meet the apps &rarr;</a></p>
   </section>
 
-  <section id="about" class="about">
-    <h2>About</h2>
-    <p class="sub">One studio, one developer, zero dark patterns.</p>
-    <p>Scryware is run by Kevin Gillum, a systems engineer with 20+ years of experience building and maintaining the infrastructure that keeps businesses running. ScryWare, the flagship product, grew out of that work — the monitoring and self-healing tool he always wanted on his own networks.</p>
-    <p>No ads, no data harvesting, no engagement tricks. Just software.</p>
+  <section class="block" id="about">
+    <h2>One studio, zero dark patterns</h2>
+    <p class="sub">Scryware is run by Kevin Gillum, a systems engineer with 20+ years keeping business infrastructure running. No ads, no data harvesting, no engagement tricks. Just software.</p>
+    <p class="section-link"><a class="more-link" href="company.html">About the company &rarr;</a></p>
   </section>
 
-  <section id="contact">
+  <section class="block" id="contact">
     <div class="contact-box">
       <h2>Get in touch</h2>
-      <p class="sub">Questions, feedback, or just saying hello — the inbox is open.</p>
+      <p class="sub">Pilot inquiries, app feedback, or just saying hello — the inbox is open.</p>
       <a href="mailto:kevin@scryware.io">kevin@scryware.io</a>
     </div>
   </section>
 
   <footer>
     <div>&copy; 2026 Scryware. All rights reserved.</div>
-    <div><a href="https://github.com/GrumpyDadPool">GitHub</a></div>
+    <nav>
+      <a href="product.html">Product</a>
+      <a href="apps.html">Apps</a>
+      <a href="company.html">Company</a>
+    </nav>
   </footer>
 
 </div>
