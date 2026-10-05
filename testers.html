@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tester signup — Scryware</title>
+<meta name="description" content="Sign up to test FocusUp and other Scryware apps. Opens your email app — no account required.">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="scryware-logo.png" type="image/png">
+</head>
+<body>
+<div class="wrap">
+
+  <header class="site">
+    <a class="logo" href="index.html"><img src="scryware-logo.png" alt="Scryware" width="1348" height="310"></a>
+    <nav>
+      <a href="product.html">Product</a>
+      <a href="apps.html">Apps</a>
+      <a href="company.html">Company</a>
+      <a href="testers.html">Testers</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="page-hero">
+    <div class="kicker">Closed beta</div>
+    <h1>Try FocusUp<br><span>before it hits the store.</span></h1>
+    <p>We’re looking for a few people to put FocusUp through real days — brain dumps, the one-task home screen, and the home-screen widget. Fill this out and your email app opens with a ready message to Kevin. Nothing is stored on this site.</p>
+  </div>
+
+  <section class="block">
+    <div class="framed form-card">
+      <form id="tester-form" action="mailto:kevin@scryware.io" method="get" enctype="text/plain">
+        <input type="hidden" name="subject" id="mail-subject" value="FocusUp tester signup">
+        <label class="form-label" for="name">Your name</label>
+        <input class="form-input" type="text" id="name" name="name" autocomplete="name" required>
+
+        <label class="form-label" for="email">Email</label>
+        <input class="form-input" type="email" id="email" name="email" autocomplete="email" required>
+
+        <label class="form-label" for="app">What do you want to test?</label>
+        <select class="form-input" id="app" name="app">
+          <option value="FocusUp" selected>FocusUp</option>
+          <option value="Finance Dashboard">Finance Dashboard</option>
+          <option value="Bill Reminder">Bill Reminder</option>
+          <option value="Home Maintenance">Home Maintenance</option>
+          <option value="Wallpaper Watcher">Wallpaper Watcher</option>
+          <option value="ScryWare hub">ScryWare hub</option>
+          <option value="Not sure yet">Not sure yet</option>
+        </select>
+
+        <label class="form-label" for="device">Phone / Android (optional)</label>
+        <input class="form-input" type="text" id="device" name="device" placeholder="e.g. Pixel 7a, Android 15" autocomplete="off">
+
+        <label class="form-label" for="notes">Anything else? (optional)</label>
+        <textarea class="form-input form-textarea" id="notes" name="notes" rows="4" placeholder="ADHD / AuDHD experience, how you heard about us, timezone…"></textarea>
+
+        <p class="form-privacy">Submitting opens your email app with a message to <a href="mailto:kevin@scryware.io">kevin@scryware.io</a>. We only use what you send to invite testers — no newsletter, no ads, no account on this site.</p>
+
+        <button class="cta form-submit" type="submit">Open email signup</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div>&copy; 2026 Scryware. All rights reserved.</div>
+    <nav>
+      <a href="product.html">Product</a>
+      <a href="apps.html">Apps</a>
+      <a href="company.html">Company</a>
+      <a href="testers.html">Testers</a>
+      <a href="focus-up-privacy.html">FocusUp privacy</a>
+    </nav>
+  </footer>
+
+</div>
+<script>
+(function () {
+  var form = document.getElementById("tester-form");
+  if (!form) return;
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var name = document.getElementById("name").value.trim();
+    var email = document.getElementById("email").value.trim();
+    var app = document.getElementById("app").value;
+    var device = document.getElementById("device").value.trim();
+    var notes = document.getElementById("notes").value.trim();
+    var subject = encodeURIComponent(app + " tester signup — " + (name || email));
+    var lines = [
+      "Name: " + name,
+      "Email: " + email,
+      "App: " + app,
+      "Device: " + (device || "(not given)"),
+      "",
+      "Notes:",
+      notes || "(none)"
+    ];
+    var body = encodeURIComponent(lines.join("\n"));
+    window.location.href = "mailto:kevin@scryware.io?subject=" + subject + "&body=" + body;
+  });
+})();
+</script>
+</body>
+</html>
