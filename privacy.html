@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy · Scryware</title>
+<meta name="description" content="Privacy policy for Scryware Android apps. Finance Dashboard, FocusUp, and Wallpaper Watcher keep what you enter on the device.">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="scryware-logo.png" type="image/png">
+<link rel="canonical" href="https://scryware.io/privacy.html">
+</head>
+<body>
+<div class="wrap">
+
+  <header class="site">
+    <a class="logo" href="index.html"><img src="scryware-logo.png" alt="Scryware" width="1348" height="310"></a>
+    <nav>
+      <a href="product.html">Product</a>
+      <a href="apps.html">Apps</a>
+      <a href="company.html">Company</a>
+      <a href="testers.html">Testers</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="block">
+    <div class="kicker">Scryware</div>
+    <h1>Privacy Policy</h1>
+    <p class="sub">Effective date: October 5, 2026</p>
+    <p>Developer: Scryware</p>
+    <p>Contact: <a href="mailto:kevin@scryware.io">kevin@scryware.io</a></p>
+    <p>This page is the privacy policy for the Scryware Android apps named below. It replaces the separate pages for Finance Dashboard (effective October 4, 2026), FocusUp (effective October 5, 2026), and Wallpaper Watcher (effective September 30, 2026). Those addresses now redirect here.</p>
+    <p>If this policy changes, the new version will be posted on this page with a new date.</p>
+
+    <h2 id="finance-dashboard">Finance Dashboard</h2>
+    <p>Effective date: October 4, 2026</p>
+    <p>Finance Dashboard does not collect personal information. It has no account, no bank login, no ads, and no analytics. The balances, debts, and bills you type in stay on your phone. The app does not send them to Scryware or to anyone else.</p>
+
+    <p><strong>What stays on your phone</strong></p>
+    <p>You enter account balances and bills yourself. The app stores them in a private database on the device, along with the history you keep so it can show a trend. A home-screen widget can show your net worth, the date of the latest figure, a short change, and the name and date of the next bill. That widget only displays what is already on the phone.</p>
+    <p>Reminders are off until you turn them on for a bill. A reminder is a notification on your phone with the bill's name and date. It does not include the dollar amount. If the app was set to remind you, it can start those reminders again after a reboot. Nothing in the notification is sent off the phone.</p>
+
+    <p><strong>Export</strong></p>
+    <p>You can save an encrypted copy of your data to a file you choose, with a passphrase you choose. You can read that file back into the app later. Scryware does not receive the file or the passphrase. If you save the file to a cloud drive, that copy is governed by the drive you picked, not by Scryware.</p>
+
+    <p><strong>Backup</strong></p>
+    <p>Android backup is enabled for this app. If you have device backup turned on, Android may include this app's data in the backup for your phone. That backup is handled by Google under Google's policies. Scryware does not receive it. Uninstalling the app deletes the copy stored in the app.</p>
+
+    <p><strong>Purchases</strong></p>
+    <p>The app does not see your card number, bank login, or Google account password. If you buy the full version on Google Play, Google handles that payment under Google's own policies. Your balances and bills are not part of the purchase.</p>
+
+    <p><strong>Children</strong></p>
+    <p>The app is not directed at children under 13, and it does not collect data from anyone.</p>
+
+    <h2 id="focusup">FocusUp</h2>
+    <p>Effective date: October 5, 2026</p>
+    <p>FocusUp does not collect personal information. It has no account, no cloud sync, and no bank or finance login. What you enter stays on your phone. The app does not send it to Scryware or to anyone else.</p>
+
+    <p><strong>What stays on your phone</strong></p>
+    <p>What you enter in FocusUp stays on the device. Scryware does not receive it.</p>
+
+    <p><strong>Children</strong></p>
+    <p>The app is not directed at children under 13, and it does not collect data from anyone.</p>
+
+    <h2 id="wallpaper-watcher">Wallpaper Watcher</h2>
+    <p>Effective September 30, 2026</p>
+    <p>Wallpaper Watcher does not collect, store, transmit, or share any personal information or user data of any kind.</p>
+    <ul class="check-list">
+      <li><strong>No data collection.</strong> The app reads only the single image file you explicitly select with the system file picker, and only to set it as your wallpaper. Nothing is uploaded, logged, or sent anywhere.</li>
+      <li><strong>No network access.</strong> The app requests no network permissions and makes no network requests.</li>
+      <li><strong>No analytics, ads, or trackers.</strong> There are none in the app.</li>
+      <li><strong>On-device only.</strong> Your file selection and settings (which screens get the wallpaper, whether watching is enabled) are stored in the app's private preferences on your device and never leave it.</li>
+    </ul>
+
+    <h2 id="bill-reminder">Bill Reminder</h2>
+    <p>Checked against the Bill Reminder app source (GrumpyDadPool/bill-reminder, commit 896db29). This section states what that source does. It is not a legal conclusion.</p>
+    <p>The app manifest is labeled Bill Reminder. It requests <code>POST_NOTIFICATIONS</code> and <code>RECEIVE_BOOT_COMPLETED</code>. The app's own manifest does not request <code>INTERNET</code>.</p>
+    <p>Bills, payments, and reminder settings are stored in a local Room database on the device named <code>bills.db</code>. A bill row holds the name, amount, cadence, next due date, category, note, and that bill's reminder switches. A payment row holds the bill name, the date paid, and the amount. Reminder hour and on/off switches are stored in that database. Snooze times and a purchased flag plus a first-install time are stored in app preferences on the device.</p>
+    <p>The locked screen says there is no subscription, no account, and no bank link, and that unlock through Google Play is not available yet. The app source has no bank-login screen.</p>
+    <p>Reminders are scheduled on the device. The notification text includes the bill name, whether it renews or is due, the date, and the amount. A morning-after note uses the same fields ("was due yesterday" or "renewed yesterday," plus the amount). Snooze moves that one reminder by one day and does not change the due date. After a reboot, a boot receiver rebuilds the schedule from the stored bills. The Reminders screen says that if the phone dies, these bills are gone.</p>
+    <p>The manifest sets <code>android:allowBackup="true"</code>. The source does not describe what a device backup includes. That flag and the on-screen "if this phone dies" line are both in the repo; this page does not reconcile them.</p>
+    <p>A one-time unlock is coded with Google Play Billing for product id <code>bill_reminder_unlock</code>. That code asks Play for the product and for existing purchases, then stores the purchased flag on the device. It does not send bill rows to Play Billing. The repo states that a live Play product is not configured yet.</p>
+    <p>The app Gradle file lists AndroidX UI, Room, WorkManager, and Play Billing. It does not list an ads or analytics SDK. A merged manifest from those libraries was not built for this page, so a permission added only by a library is not ruled out here.</p>
+
+    <h2 id="home-maintenance">Home Maintenance</h2>
+    <p>Checked against the Home Maintenance app source (GrumpyDadPool/home-maintenance-reminder, commit ad0dc8c), including <code>docs/privacy.md</code>, which the completion log shows in the app. This section states what that source does. It is not a legal conclusion.</p>
+    <p>The app manifest is labeled Home Maintenance. It requests <code>POST_NOTIFICATIONS</code> and <code>RECEIVE_BOOT_COMPLETED</code>. The app's own manifest does not request <code>INTERNET</code>. The app Gradle file does not include Play Billing, and it does not list an ads or analytics SDK. A merged manifest from libraries was not built for this page.</p>
+    <p>The checklist and the completion log stay on the phone. There is no account. A local Room database named <code>home-maintenance.db</code> holds the home profile (home type, climate, heating, gutters, and yard), tasks (name, notes, interval, next due date, source, and whether the task is paused), completions (date, task name, interval, and note), template choices, and reminder settings. A fresh install starts empty aside from the default reminder-settings row.</p>
+    <p>Export writes a file in the app cache and opens the Android share sheet. You choose where the file goes. The app does not upload it. The spreadsheet of completed work is the date, the task name, how often it repeats, and the note. A second file is the one used to put the checklist back on a phone. Importing it replaces what is on that phone.</p>
+    <p>The manifest sets <code>android:allowBackup="false"</code>. <code>data_extraction_rules.xml</code> excludes app data from cloud backup and from device-to-device transfer. The in-app note also says an older copy can still sit in the Google account from a backup made before this version, and a new phone does not get the log unless you export it and move that file yourself.</p>
+    <p>Reminders stay on the phone. The notification text is the task name and when it is due. It does not include a dollar amount. The app asks permission to show notifications. After a restart it sets the reminders again from the stored tasks. Paused tasks stop reminding and keep their history.</p>
+
+    <p>Questions: <a href="mailto:kevin@scryware.io">kevin@scryware.io</a></p>
+  </section>
+
+  <footer>
+    <div>&copy; 2026 Scryware. All rights reserved.</div>
+    <nav>
+      <a href="product.html">Product</a>
+      <a href="apps.html">Apps</a>
+      <a href="company.html">Company</a>
+      <a href="testers.html">Testers</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </footer>
+
+</div>
+</body>
+</html>
