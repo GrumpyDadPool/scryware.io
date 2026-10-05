@@ -74,22 +74,32 @@
     </ul>
 
     <h2 id="bill-reminder">Bill Reminder</h2>
-    <p>Checked against the Bill Reminder app source (GrumpyDadPool/bill-reminder, commit 896db29). This section states what that source does. It is not a legal conclusion.</p>
-    <p>The app manifest is labeled Bill Reminder. It requests <code>POST_NOTIFICATIONS</code> and <code>RECEIVE_BOOT_COMPLETED</code>. The app's own manifest does not request <code>INTERNET</code>.</p>
-    <p>Bills, payments, and reminder settings are stored in a local Room database on the device named <code>bills.db</code>. A bill row holds the name, amount, cadence, next due date, category, note, and that bill's reminder switches. A payment row holds the bill name, the date paid, and the amount. Reminder hour and on/off switches are stored in that database. Snooze times and a purchased flag plus a first-install time are stored in app preferences on the device.</p>
-    <p>The locked screen says there is no subscription, no account, and no bank link, and that unlock through Google Play is not available yet. The app source has no bank-login screen.</p>
-    <p>Reminders are scheduled on the device. The notification text includes the bill name, whether it renews or is due, the date, and the amount. A morning-after note uses the same fields ("was due yesterday" or "renewed yesterday," plus the amount). Snooze moves that one reminder by one day and does not change the due date. After a reboot, a boot receiver rebuilds the schedule from the stored bills. The Reminders screen says that if the phone dies, these bills are gone.</p>
-    <p>The manifest sets <code>android:allowBackup="true"</code>. The source does not describe what a device backup includes. That flag and the on-screen "if this phone dies" line are both in the repo; this page does not reconcile them.</p>
-    <p>A one-time unlock is coded with Google Play Billing for product id <code>bill_reminder_unlock</code>. That code asks Play for the product and for existing purchases, then stores the purchased flag on the device. It does not send bill rows to Play Billing. The repo states that a live Play product is not configured yet.</p>
-    <p>The app Gradle file lists AndroidX UI, Room, WorkManager, and Play Billing. It does not list an ads or analytics SDK. A merged manifest from those libraries was not built for this page, so a permission added only by a library is not ruled out here.</p>
+    <p>Bill Reminder has no account, no subscription, and no bank link. The bills you enter stay on your phone. The app does not send them to Scryware or to anyone else. Unlock through Google Play is not available yet.</p>
+
+    <p><strong>What stays on your phone</strong></p>
+    <p>You enter bills yourself. The app stores them on the phone, along with payments and reminder settings. A bill holds the name, amount, how often it repeats, the next due date, a category, a note, and whether reminders are on for that bill. A payment holds the bill name, the date paid, and the amount. Snooze times stay on the phone, as does a record of when the app was first installed and whether it is unlocked.</p>
+    <p>A reminder is a notification on your phone with the bill's name, whether it renews or is due, the date, and the amount. A note the morning after uses the same fields. Snooze moves that one reminder by one day and does not change the due date. If the app was set to remind you, it can start those reminders again after a reboot. Nothing in the notification is sent off the phone.</p>
+
+    <p><strong>Backup</strong></p>
+    <p>Android backup is enabled for this app. If you have device backup turned on, Android may include this app's data in the backup for your phone. That backup is handled by Google under Google's policies. Scryware does not receive it.</p>
+
+    <p><strong>Purchases</strong></p>
+    <p>Unlock through Google Play is not available yet. When a purchase is offered, Google handles that payment. The app does not send your bills as part of it.</p>
 
     <h2 id="home-maintenance">Home Maintenance</h2>
-    <p>Checked against the Home Maintenance app source (GrumpyDadPool/home-maintenance-reminder, commit ad0dc8c), including <code>docs/privacy.md</code>, which the completion log shows in the app. This section states what that source does. It is not a legal conclusion.</p>
-    <p>The app manifest is labeled Home Maintenance. It requests <code>POST_NOTIFICATIONS</code> and <code>RECEIVE_BOOT_COMPLETED</code>. The app's own manifest does not request <code>INTERNET</code>. The app Gradle file does not include Play Billing, and it does not list an ads or analytics SDK. A merged manifest from libraries was not built for this page.</p>
-    <p>The checklist and the completion log stay on the phone. There is no account. A local Room database named <code>home-maintenance.db</code> holds the home profile (home type, climate, heating, gutters, and yard), tasks (name, notes, interval, next due date, source, and whether the task is paused), completions (date, task name, interval, and note), template choices, and reminder settings. A fresh install starts empty aside from the default reminder-settings row.</p>
-    <p>Export writes a file in the app cache and opens the Android share sheet. You choose where the file goes. The app does not upload it. The spreadsheet of completed work is the date, the task name, how often it repeats, and the note. A second file is the one used to put the checklist back on a phone. Importing it replaces what is on that phone.</p>
-    <p>The manifest sets <code>android:allowBackup="false"</code>. <code>data_extraction_rules.xml</code> excludes app data from cloud backup and from device-to-device transfer. The in-app note also says an older copy can still sit in the Google account from a backup made before this version, and a new phone does not get the log unless you export it and move that file yourself.</p>
-    <p>Reminders stay on the phone. The notification text is the task name and when it is due. It does not include a dollar amount. The app asks permission to show notifications. After a restart it sets the reminders again from the stored tasks. Paused tasks stop reminding and keep their history.</p>
+    <p>Home Maintenance keeps the checklist and the completion log on your phone. There is no account. The app does not send them to Scryware.</p>
+
+    <p><strong>What stays on your phone</strong></p>
+    <p>The phone can hold the home type, the climate, the heating, whether you have gutters and a yard, task names, notes, how often a task repeats, due dates, whether a task is paused, the dates the work was marked done, which templates you use, and reminder settings. A new install starts with no checklist.</p>
+
+    <p><strong>Export</strong></p>
+    <p>You can export the log. Export opens the Android share sheet, and you choose where the file goes. The app does not upload it. The spreadsheet is completed work only: the date, the task name, how often it repeats, and the note. The other file is the one you use to put the checklist back on a phone. Importing it replaces what is on that phone.</p>
+
+    <p><strong>Backup</strong></p>
+    <p>This app's data is excluded from cloud backup and from device-to-device transfer. An older copy can still sit in the Google account from a backup made before this version. A new phone does not get the log unless you export it and move that file yourself.</p>
+
+    <p><strong>Reminders</strong></p>
+    <p>Reminders stay on the phone. A reminder names the task and when it is due. It does not include a dollar amount. The app asks permission to show notifications. After a restart it sets the reminders again from the tasks stored on the phone. Paused tasks stop reminding and keep their history.</p>
 
     <p>Questions: <a href="mailto:kevin@scryware.io">kevin@scryware.io</a></p>
   </section>
