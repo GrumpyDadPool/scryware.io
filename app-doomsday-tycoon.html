@@ -12,6 +12,8 @@
 .media-placeholder strong { display: block; color: var(--text); font-size: 17px; margin-bottom: 6px; }
 .shot-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 24px 0; }
 .shot-slot { border: 2px dashed var(--border); border-radius: 12px; padding: 36px 16px; text-align: center; color: var(--muted); background: var(--panel); font-size: 14px; }
+.shot-slot.filled { padding: 10px; }
+.shot-slot img { display: block; width: 100%; height: auto; border-radius: 8px; }
 @media (max-width: 640px) { .shot-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
@@ -53,9 +55,9 @@
         <li><strong>Fair monetization.</strong> Paid boosts and shortcuts only, in the Adventure Capitalist style. No premium lairs, no content held back for money, and no loot boxes.</li>
       </ul>
       <div class="shot-grid">
-        <div class="shot-slot">Screenshot: inside the lair</div>
-        <div class="shot-slot">Screenshot: enterprise cards and henchmen</div>
-        <div class="shot-slot">Screenshot: offline earnings waiting for you</div>
+        <div class="shot-slot filled"><img src="assets/doomsday-tycoon/inside-the-lair.jpg" alt="Inside the BFE lair in Doomsday Tycoon, the crew at work under the tower" loading="lazy"></div>
+        <div class="shot-slot filled"><img src="assets/doomsday-tycoon/enterprise-cards.jpg" alt="Doomsday Tycoon enterprise cards with their henchmen, Gus and Vex" loading="lazy"></div>
+        <div class="shot-slot filled"><img src="assets/doomsday-tycoon/offline-earnings.jpg" alt="Offline earnings in Doomsday Tycoon: your crew kept scheming while you were away" loading="lazy"></div>
       </div>
     </div>
 
