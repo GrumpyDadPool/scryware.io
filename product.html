@@ -40,8 +40,9 @@ body { background: #ffffff; }
     <div class="kicker">Flagship product</div>
     <h1>Meet <span>Scryware Command</span>.</h1>
     <p>A hub-and-spoke fleet monitoring and self-healing platform. Lightweight reporters on every machine dial in to a central hub, which collects health reports, queues remediation commands, and serves a browser-based Command Center plus a versioned REST API, so you can manage many machines from any device on your network.</p>
+    <p><strong>Scryware Command now lives at <a href="https://scryware.tech">scryware.tech</a>, its primary home.</strong></p>
     <div class="cta-row">
-      <a class="cta" href="#pilot">Request Pilot Access</a>
+      <a class="cta" href="https://scryware.tech/#pilot">Request Pilot Access</a>
       <a class="cta-ghost" href="#how">How it works</a>
     </div>
   </div>
@@ -103,36 +104,12 @@ body { background: #ffffff; }
 
   <section class="block" id="pilot">
     <h2>Request pilot access</h2>
-    <p class="sub">Scryware Command is piloted with MSPs and small businesses that want fleet visibility without another heavy platform. Tell us what you run and what you would pilot, and the request lands directly in Kevin's inbox.</p>
-    <div class="framed" id="thanks" style="display:none; margin-bottom: 24px;">
-      <p><strong>Thanks for your interest.</strong> Your pilot request is on its way. Kevin reads every request personally and will reply at the email you gave.</p>
-    </div>
-    <div class="form-card">
-      <form action="https://formsubmit.co/kevin@scryware.io" method="POST">
-        <input type="hidden" name="_subject" value="Pilot Access Request - Scryware Command">
-        <input type="hidden" name="_next" value="https://scryware.io/product.html?thanks=1">
-        <label class="form-label" for="pilot-name">Name</label>
-        <input class="form-input" id="pilot-name" name="name" type="text" required>
-        <label class="form-label" for="pilot-email">Email</label>
-        <input class="form-input" id="pilot-email" name="email" type="email" required>
-        <label class="form-label" for="pilot-company">Company or organization</label>
-        <input class="form-input" id="pilot-company" name="company" type="text" required>
-        <label class="form-label" for="pilot-team">Team size (optional)</label>
-        <input class="form-input" id="pilot-team" name="team_size" type="text">
-        <label class="form-label" for="pilot-message">What would you pilot?</label>
-        <textarea class="form-input form-textarea" id="pilot-message" name="message" required></textarea>
-        <p class="form-privacy">Your request goes to kevin@scryware.io and is used only to answer it.</p>
-        <button class="cta form-submit" type="submit">Request Pilot Access</button>
-      </form>
+    <p class="sub">Pilot requests run through Scryware Command's primary home at scryware.tech. Tell us what you run and what you would pilot, and the request lands directly in Kevin's inbox.</p>
+    <div class="cta-row">
+      <a class="cta" href="https://scryware.tech/#pilot">Request Pilot Access at scryware.tech</a>
     </div>
     <p class="sub" style="margin-top: 24px;">Prefer email? Write to <a href="mailto:kevin@scryware.io">kevin@scryware.io</a>.</p>
   </section>
-
-  <script>
-    if (new URLSearchParams(window.location.search).get("thanks") === "1") {
-      document.getElementById("thanks").style.display = "block";
-    }
-  </script>
 
   <footer>
     <div>&copy; 2026 Scryware. All rights reserved.</div>
